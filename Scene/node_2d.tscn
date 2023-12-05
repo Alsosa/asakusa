@@ -1,0 +1,22 @@
+[gd_scene load_steps=5 format=3 uid="uid://cc7cxqb4l1mgm"]
+
+[ext_resource type="Texture2D" uid="uid://dnfivoreyjrqv" path="res://assets/grass_tile_001.png" id="1_kgw0o"]
+[ext_resource type="Script" path="res://src/IsoMap.gd" id="2_gnjyv"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_m71o5"]
+texture = ExtResource("1_kgw0o")
+texture_region_size = Vector2i(32, 32)
+0:0/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_tfd2w"]
+tile_shape = 1
+tile_layout = 5
+tile_size = Vector2i(32, 16)
+sources/0 = SubResource("TileSetAtlasSource_m71o5")
+
+[node name="Node2D" type="Node2D"]
+
+[node name="TileMap" type="TileMap" parent="."]
+tile_set = SubResource("TileSet_tfd2w")
+format = 2
+script = ExtResource("2_gnjyv")
