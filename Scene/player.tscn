@@ -1,0 +1,18 @@
+[gd_scene load_steps=4 format=3 uid="uid://c5do8nri2xy3p"]
+
+[ext_resource type="Script" path="res://Player.gd" id="1_ld2cm"]
+[ext_resource type="Texture2D" uid="uid://b5ytaqd8rc8h6" path="res://assets/alice_body.png" id="2_se8lb"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_77wfc"]
+
+[node name="Player" type="Area2D"]
+script = ExtResource("1_ld2cm")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_se8lb")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CapsuleShape2D_77wfc")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="body_exited" from="." to="." method="_on_body_exited"]
